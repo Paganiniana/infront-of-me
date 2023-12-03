@@ -1,0 +1,1 @@
+\curl -F "image=@street-scene.jpg;type=image/jpeg" http://localhost:3000/analyze-image
