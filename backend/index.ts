@@ -45,7 +45,10 @@ import multer from "multer";
 
 const upload = multer();
 
-/** Provides a single space for an  "image" upload in the POST request */
+/** 
+ * Provides a single space for an  "image" upload in the POST request
+ *  See the docs: https://github.com/expressjs/multer
+ */
 app.post(EDLIGHT_ENDPOINT, upload.single("image"), analyzeImage);
 
 
