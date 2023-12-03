@@ -12,9 +12,13 @@ The backend is an Express application, running with a single endpoint. To run th
 - Google's [gcloud utility](https://cloud.google.com/build/docs/deploying-builds/deploy-appengine), signed in, with appropriate IAM permissions
 - A Firebase Admin [SDK Key](https://firebase.google.com/docs/admin/setup#initialize_the_sdk_in_non-google_environments)
 
+After that, you ***should*** be able to simply run the following! 
+
 ```bash
 npm run test
 ```
+
+After that, to test the endpoint, try using the test scripts found in `/backend/tests/scripts/`.
 
 #### OpenAI
 
@@ -22,7 +26,8 @@ The OpenAI secret key should be placed in a `.env` file, with the following stru
 
 ```bash
 OPENAI_KEY="... your key goes here ..."
-FRONTEND_URL="https://infront-of-me.web.app"
+# used for CORS, change this if you deploy your own client
+FRONTEND_URL="https://infront-of-me.web.app" 
 SPECIAL_AUTH_TOKEN="... some special key ...";
 ```
 
