@@ -9,6 +9,5 @@ export function getSerializedUrl(image: Buffer, mime:string) {
 
     // 3. format and return
     let res = `data:${mime};${encoding},${image64}`;
-    console.log(res);
     return res
 }

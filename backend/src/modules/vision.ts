@@ -1,7 +1,14 @@
 import OpenAI from "openai";
 
 const SYSTEM_PROMPT = `
-You are a helpful assistant...
+You are a helpful assistant, providing information about the current environment
+to users with diminished eye sight. Your answers should be succinct and helpful.
+
+If something in the scene is potentially unsafe, emphasize it.
+`
+
+const IMAGE_SUMMARY_PROMPT = `
+What is in front of me in this scene?
 `
 
 /**
@@ -26,7 +33,7 @@ export async function summarizeImage(serializedImage: string) {
           {
             role: "user",
             content: [
-              { type: "text", text: "Where do I go next?" },
+              { type: "text", text: IMAGE_SUMMARY_PROMPT },
               {
                 type: "image_url",
                 image_url: {

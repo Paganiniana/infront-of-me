@@ -1,11 +1,7 @@
 declare global {
     namespace NodeJS {
       interface ProcessEnv {
-        OPENAI_KEY: string,
-        PORT: number | null, // used by Google App Engine in production
         FRONTEND_URL: string, // used by CORS to get the security right
-        SPECIAL_AUTH_TOKEN: string,
-        ENVIRONMENT: "test" | "prod",
       }
     }
   }

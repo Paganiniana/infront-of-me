@@ -3,23 +3,25 @@ import dotenv from "dotenv";
 
 dotenv.config(); // exposes process.env.*
 
+type ModeType = "test" | "prod";
+const MODE: ModeType = process.argv[2] as ModeType;
+
 const EDLIGHT_ENDPOINT = "/analyze-image";
 
 const app = Express();
 const port = process.env.PORT || 3000;
 
-// @todo - add url/cors for frontend 
-// CORS
+/** ---------------------- CORS --------------------------- */
+
 import cors from "cors";
-const PROD_HOSTS = [""]
+const PROD_HOSTS = [process.env.FRONTEND_URL]
 const DEV_HOSTS = ["http://localhost:5173"] // vite client
 
-
-// @todo only allow DEV_HOSTS in "test" mode
 function originIsAllowed(origin:string): boolean {
   // 1. check for specific origins
   if (PROD_HOSTS.includes(origin)) return true;
-  if (DEV_HOSTS.includes(origin)) return true;
+  // only check dev hosts in test mode
+  if (MODE == "test" && DEV_HOSTS.includes(origin)) return true;
   return false;
 }
 
@@ -29,6 +31,7 @@ app.use(cors({
         if (!origin) return callback(null, true);
     
         if (!originIsAllowed(origin)) {
+          console.log(MODE);
           console.log(`${origin} is not an allowed origin`);
           return callback(new Error('This specified origin not allowed'), false);
         }

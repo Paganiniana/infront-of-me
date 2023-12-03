@@ -4,7 +4,8 @@
   "description": "The backend for an image analysis service",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "ts-node index.ts prod",
+    "test": "ts-node index.ts test",
     "deploy": "gcloud app deploy"
   },
   "dependencies": {
