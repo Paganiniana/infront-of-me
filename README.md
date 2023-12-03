@@ -2,6 +2,8 @@
 
 This project provides a web application and the backend API to support it. It will describe the view provided in the camera on the mobile device. It has two parts: a [[#Backend]] and a [[#Frontend]].
 
+The API will do the following: take an image as part of its uploaded form and return a `{ message: <content> }` with its description.
+
 # Backend
 
 The backend is an Express application, running with a single endpoint. To run the project, you should acquire...
