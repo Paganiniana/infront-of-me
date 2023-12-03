@@ -1,0 +1,45 @@
+import OpenAI from "openai";
+
+const SYSTEM_PROMPT = `
+You are a helpful assistant...
+`
+
+/**
+ * If the image can't be used as an OpenAI upload by this point, something went horribly wrong...
+ */
+export async function summarizeImage(serializedImage: string) {
+    // 0. confirm the key exists
+    let key = process.env.OPENAI_KEY;
+    if (!key || !key.length) throw new Error("No OpenAI API Key was provided in the environment.");
+
+    // 1. initialize API
+    let openai = new OpenAI({ apiKey: key });
+
+    // 2. make the request
+    const response = await openai.chat.completions.create({
+        model: "gpt-4-vision-preview",
+        messages: [
+          {
+              role: "system",
+              content: SYSTEM_PROMPT,
+          },
+          {
+            role: "user",
+            content: [
+              { type: "text", text: "Where do I go next?" },
+              {
+                type: "image_url",
+                image_url: {
+                  "url": serializedImage,
+                }
+              },
+            ],
+          },
+        ],
+      });
+
+      // 3. extract text response
+      let text = response.choices[0].message.content;
+      return text;
+}
+

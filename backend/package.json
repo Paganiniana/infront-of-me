@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "The backend for an image analysis service",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "deploy": "gcloud app deploy"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.9.0",
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.20.1",
+    "ts-node": "^10.9.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/multer": "^1.4.11"
+  }
+}
