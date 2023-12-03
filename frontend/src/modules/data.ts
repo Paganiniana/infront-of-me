@@ -41,9 +41,7 @@ class DataInterface {
         formData.append("image", f);
 
         let res = await this.makeRequest(EDLIGHT_ENDPOINT, formData, "POST").then(res => res.json());
-        console.log(res);
-
-        return "description";
+        return res.message;
     }
 }
 

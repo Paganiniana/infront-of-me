@@ -26,7 +26,8 @@ export default function Viewer() {
 
     return (
         <div id="viewer" className="page-container">
-            <h1>Viewer</h1>
+            <h1>Image Describer</h1>
+            <p> Position the thing you wanted described in front of your camera, then hit "describe."</p>
             <VideoDisplay imageCapture={handleImageCapture} />
             <div className="sign-out-container">
                 <SignOut/>
