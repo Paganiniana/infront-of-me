@@ -1,5 +1,5 @@
 const TEST_URL = "http://localhost:3000";
-const LIVE_URL = import.meta.env.FRONTEND_URL;
+const LIVE_URL = "https://infront-of-me.wl.r.appspot.com"; // replace this with an alternative backend deployment
 
 import { getCurrentAuth, getAuthToken } from "../firebase/auth";
 
