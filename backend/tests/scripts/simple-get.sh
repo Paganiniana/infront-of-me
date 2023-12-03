@@ -1,1 +1,1 @@
-\curl -F "image=@street-scene.jpg;type=image/jpeg" http://localhost:3000/analyze-image
+\curl -F "image=@street-scene.jpg;type=image/jpeg" https://infront-of-me.wl.r.appspot.com/analyze-image
