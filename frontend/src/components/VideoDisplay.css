@@ -1,0 +1,15 @@
+.video-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+video {
+    border-radius: var(--main-border-radius);
+    margin: var(--main-border-radius);
+    overflow: hidden;
+}

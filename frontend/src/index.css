@@ -1,8 +1,22 @@
+:root {
+  --main-border-radius: 10px;
+
+  /* colors */
+  --honeydew: #F1FFE7;
+  --zomp: #32A287;
+  --eggplant: #6C464E;
+}
+
 html, body {
   padding: 0px;
   margin: 0px;
   width: 100vw;
   height: 100vh;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--zomp);
 }
 
 .page-container {
@@ -12,4 +26,20 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: var(--honeydew);
+}
+
+/* -------------- Input styles -------------- */ 
+
+button {
+  min-width: 200px;
+  min-height: 40px;
+  font-size: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: var(--main-border-radius);
+  border: none;
+  background-color: var(--eggplant);
+  color: var(--honeydew);
 }

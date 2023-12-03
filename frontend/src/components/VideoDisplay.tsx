@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
+import "./VideoDisplay.css";
+
 /**
  * A reduction from the process found on MDN
  * https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos#demo

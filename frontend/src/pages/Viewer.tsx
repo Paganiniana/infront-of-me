@@ -1,3 +1,5 @@
+import "./Viewer.css";
+
 import SignOut from "../components/SignOut";
 import VideoDisplay from "../components/VideoDisplay";
 
@@ -26,7 +28,9 @@ export default function Viewer() {
         <div id="viewer" className="page-container">
             <h1>Viewer</h1>
             <VideoDisplay imageCapture={handleImageCapture} />
-            <SignOut/>
+            <div className="sign-out-container">
+                <SignOut/>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,11 @@
+#viewer {
+    position: relative;
+}
+
+.sign-out-container {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    right: var(--main-border-radius);
+    bottom: var(--main-border-radius);
+}

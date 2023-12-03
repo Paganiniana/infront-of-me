@@ -4,7 +4,7 @@ export default function Authenticate() {
     return (
         <div id="viewer" className="page-container">
             <h1>Authenticate</h1>
-            <SignIn/>
+                <SignIn/>
         </div>
     )
 }
